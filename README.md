@@ -3,11 +3,12 @@ This repository contains the complete files and scripts for **Assignment 5** of 
 ## 📁 Repository Structure
 ```
 assignment_5_ALDT/
-├── assignment_5_writeup.tex          # LaTeX file for the write-up
-├── assignment_5.R                    # R script solving problem set
-├── weight-height.xls                 # Dataset used for analysis
-├── Intro_Stats_Prob.pdf              # Course textbook reference
-└── README.md                         # Repository overview and instructions
+├── report/
+│   ├── assignment_5_writeup.tex          # LaTeX write-up file
+│   └── Intro_Stats_Prob.pdf              # Course textbook reference
+├── assignment_5.R                        # R script solving problem set
+├── weight-height.xls                     # Dataset used for analysis
+└── README.md                             # Repository overview and instructions
 ```
 ## 🧠 Assignment Topics
 - Confidence intervals assuming known variance
@@ -20,7 +21,7 @@ To reproduce the analysis:
 3. Run the script step-by-step.
 
 To compile the write-up:
-1. Open `assignment_5_writeup.tex` in Overleaf or a local LaTeX editor.
+1. Open `report/assignment_5_writeup.tex` in Overleaf or a local LaTeX editor.
 2. Add results and tables from the R script.
 3. Compile to PDF for submission.
 
