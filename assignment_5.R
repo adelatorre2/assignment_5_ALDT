@@ -1,27 +1,29 @@
-#' @title assignment_5.R
+#' @title Assignment 5: Statistical Estimation and Probability Distributions
 #'
 #' @description
-#' [Provide a brief description of what the script does. Include the purpose
-#' and any relevant context or background information.]
+#' This script solves all four problems from Assignment 5 in MT220-01: Introduction to Probability 
+#' and Statistics. It covers confidence interval estimation for height and weight, properties of 
+#' the normal and exponential distributions, and sample size calculations.
 #'
 #' @details
-#' [Provide additional details about the script, such as assumptions, 
-#' limitations, or any specific behavior that users should be aware of.]
+#' Part 1 computes 95% confidence intervals for height and weight using gender-separated samples 
+#' from a dataset. Part 2 analyzes a normal distribution to evaluate its PDF, tail probabilities, 
+#' and central moments. Part 3 constructs confidence intervals using known variance and derives 
+#' the sample size required for a desired margin of error. Part 4 explores the exponential 
+#' distribution’s PDF, mean, variance, and adapts it to match a specific variance target.
 #'
-#' @author [Your Name or Team Name]
-#' @date [Date of creation or last modification]
-#'
-#' @usage
-#' [Provide an example of how to use the script, if applicable.]
+#' @author Alejandro De La Torre
+#' @date April 23, 2025
 #'
 #' @seealso
-#' [List any related scripts, functions, or documentation that may be helpful.]
+#' Course Textbook: Montgomery & Runger - Applied Statistics and Probability for Engineers
 #'
 #' @examples
-#' [Provide example usage or expected output, if relevant.]
+#' # Run this script top-down in RStudio or VS Code to reproduce figures and calculations.
 #'
 #' @note
-#' [Include any additional notes or warnings, if necessary.]
+#' This script assumes the working directory is set to the assignment_5_ALDT folder 
+#' and that all necessary subdirectories (e.g., report/figures) exist.
 
 # ---------------------------------------------
 # Part 1: Confidence Intervals for Weight & Height
