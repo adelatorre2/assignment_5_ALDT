@@ -12,8 +12,24 @@
 
 \section*{Problem 1}
 
-We compute 95\% confidence intervals for the height and weight of men and women assuming normal distribution and known variance...
+We are given a dataset of heights and weights for men and women. Assuming that these measurements follow a normal distribution and that the population variances are known and equal to the sample variances, we compute 95\% confidence intervals (CIs) for each subgroup.
 
-% (add result tables or paragraphs here as you solve)
+Let $\bar{x}$ be the sample mean, $\sigma^2$ the known variance (estimated using sample variance), and $n$ the sample size. The confidence interval for the population mean $\mu$ under a normal distribution with known variance is given by:
+
+\[
+\left[ \bar{x} - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}},\ \bar{x} + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \right]
+\]d
+
+We use $z_{\alpha/2} = 1.96$ for a 95\% confidence level.
+
+\vspace{1em}
+\subsection*{95\% Confidence Intervals}
+\begin{itemize}
+  \item Men's Height: [63.65 cm, 66.91 cm]
+  \item Women's Height: [63.63 cm, 67.84 cm]
+  \item Men's Weight: [133.35 kg, 136.39 kg]
+  \item Women's Weight: [135.33 kg, 136.93 kg]
+
+\end{itemize}
 
 \end{document}
