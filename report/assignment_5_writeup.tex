@@ -69,5 +69,43 @@ P(3 < X < 6) = \Phi(1) - \Phi(-2) \approx 0.8413 - 0.0228 = 0.8186
 \mathbb{E}[X] = \mu = 5, \quad \text{Var}(X) = \sigma^2 = 1
 \]
 
+
+\section*{Problem 3}
+
+We are given a normal population with known variance $\sigma^2 = 4$. A sample of $n = 1000$ observations has a sample mean $\bar{x} = 123$.
+
+\subsection*{a) 99\% Confidence Interval}
+
+We use the formula:
+\[
+\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}, \quad z_{0.005} = 2.576
+\]
+\[
+123 \pm 2.576 \cdot \frac{2}{\sqrt{1000}} \Rightarrow [122.8371,\ 123.1629]
+\]
+
+\subsection*{b) 95\% Confidence Interval}
+
+With $z_{0.025} = 1.96$:
+\[
+123 \pm 1.96 \cdot \frac{2}{\sqrt{1000}} \Rightarrow [122.876,\ 123.124]
+\]
+
+\subsection*{c) Minimum Sample Size for Margin of Error $E \leq 0.1$}
+
+Solving for $n$ using:
+\[
+E = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \Rightarrow n \geq \left(\frac{z_{0.025} \cdot \sigma}{E}\right)^2
+\]
+\[
+n \geq \left(\frac{1.96 \cdot 2}{0.1}\right)^2 = 1536.64 \Rightarrow \boxed{1537}
+\]
+
+\subsection*{d) Expected Value and Variance}
+
+\[
+\mathbb{E}[\bar{X}] = 123, \quad \text{Var}(\bar{X}) = \sigma^2 = 4
+\]
+
 \end{document}
 

@@ -130,3 +130,34 @@ cat("Expected value E(X):", mu_x, "\n")
 cat("Variance Var(X):", sigma2_x, "\n")
 
 
+
+# ---------------------------------------------
+# Part 3: Confidence Intervals with Known Variance
+# ---------------------------------------------
+
+# Given parameters
+sigma2_known <- 4
+sigma_known <- sqrt(sigma2_known)
+x_bar <- 123
+n_sample <- 1000
+
+# a) 99% CI for the actual mean
+z_99 <- qnorm(1 - 0.01 / 2)
+margin_error_99 <- z_99 * sigma_known / sqrt(n_sample)
+ci_99 <- c(lower = x_bar - margin_error_99, upper = x_bar + margin_error_99)
+cat("99% CI for the mean:", round(ci_99, 4), "\n")
+
+# b) 95% CI for the actual mean
+z_95 <- qnorm(1 - 0.05 / 2)
+margin_error_95 <- z_95 * sigma_known / sqrt(n_sample)
+ci_95 <- c(lower = x_bar - margin_error_95, upper = x_bar + margin_error_95)
+cat("95% CI for the mean:", round(ci_95, 4), "\n")
+
+# c) Required sample size for margin of error E <= 0.1 at 95% confidence
+E_target <- 0.1
+required_n <- ceiling((z_95 * sigma_known / E_target)^2)
+cat("Minimum required sample size for E <= 0.1:", required_n, "\n")
+
+# d) Expected value and variance
+cat("Expected value:", x_bar, "\n")
+cat("Known variance:", sigma2_known, "\n")
