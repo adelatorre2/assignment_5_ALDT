@@ -18,7 +18,7 @@ Let $\bar{x}$ be the sample mean, $\sigma^2$ the known variance (estimated using
 
 \[
 \left[ \bar{x} - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}},\ \bar{x} + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \right]
-\]d
+\]
 
 We use $z_{\alpha/2} = 1.96$ for a 95\% confidence level.
 
@@ -32,4 +32,42 @@ We use $z_{\alpha/2} = 1.96$ for a 95\% confidence level.
 
 \end{itemize}
 
+
+\section*{Problem 2}
+
+We are given that $X$ follows a normal distribution with mean $\mu = 5$ and variance $\sigma^2 = 1$.
+
+\subsection*{a) PDF Expression}
+
+The probability density function (pdf) of $X$ is:
+
+\[
+f(x) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2}(x - 5)^2\right)
+\]
+
+Evaluating this at the mean:
+\[
+f(5) \approx 0.3989
+\]
+
+\subsection*{b) Probability that $X > 6$}
+
+We compute this using the cumulative distribution function:
+\[
+P(X > 6) = 1 - P(X \leq 6) = 1 - \Phi(1) \approx 0.1587
+\]
+
+\subsection*{c) Probability that $3 < X < 6$}
+
+\[
+P(3 < X < 6) = \Phi(1) - \Phi(-2) \approx 0.8413 - 0.0228 = 0.8186
+\]
+
+\subsection*{d) Expected Value and Variance}
+
+\[
+\mathbb{E}[X] = \mu = 5, \quad \text{Var}(X) = \sigma^2 = 1
+\]
+
 \end{document}
+

@@ -91,9 +91,42 @@ p_women_weight <- ggplot(women, aes(x = Weight)) +
   theme_minimal()
 ggsave("report/figures/womens_weight_distribution.png", plot = p_women_weight, width = 8, height = 6)
 
+
 # Plot: Women's Height
 p_women_height <- ggplot(women, aes(x = Height)) +
   geom_histogram(binwidth = 2, fill = "orchid", color = "white") +
   labs(title = "Distribution of Women's Height", x = "Height (cm)", y = "Frequency") +
   theme_minimal()
 ggsave("report/figures/womens_height_distribution.png", plot = p_women_height, width = 8, height = 6)
+
+
+# ---------------------------------------------
+# Part 2: Normal Distribution Analysis
+# ---------------------------------------------
+
+# Parameters for the normal distribution
+mu_x <- 5
+sigma2_x <- 1
+sigma_x <- sqrt(sigma2_x)
+
+# a) PDF expression
+pdf_normal <- function(x) {
+  return((1 / (sigma_x * sqrt(2 * pi))) * exp(-0.5 * ((x - mu_x)^2 / sigma2_x)))
+}
+
+# Evaluate pdf at mean (for reference)
+cat("PDF evaluated at X = 5:", pdf_normal(5), "\n")
+
+# b) P(X > 6)
+prob_x_gt_6 <- pnorm(6, mean = mu_x, sd = sigma_x, lower.tail = FALSE)
+cat("P(X > 6):", round(prob_x_gt_6, 4), "\n")
+
+# c) P(3 < X < 6)
+prob_3_lt_x_lt_6 <- pnorm(6, mean = mu_x, sd = sigma_x) - pnorm(3, mean = mu_x, sd = sigma_x)
+cat("P(3 < X < 6):", round(prob_3_lt_x_lt_6, 4), "\n")
+
+# d) Expected value and variance
+cat("Expected value E(X):", mu_x, "\n")
+cat("Variance Var(X):", sigma2_x, "\n")
+
+
