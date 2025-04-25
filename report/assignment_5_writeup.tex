@@ -107,5 +107,42 @@ n \geq \left(\frac{1.96 \cdot 2}{0.1}\right)^2 = 1536.64 \Rightarrow \boxed{1537
 \mathbb{E}[\bar{X}] = 123, \quad \text{Var}(\bar{X}) = \sigma^2 = 4
 \]
 
-\end{document}
 
+\section*{Problem 4}
+
+We are given that $X$ follows an exponential distribution with rate parameter $\lambda = 2$.
+
+\subsection*{a) PDF of the Distribution}
+
+The probability density function (pdf) of the exponential distribution is given by:
+\[
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+\]
+Substituting $\lambda = 2$, we get:
+\[
+f(x) = 2 e^{-2x}, \quad x \geq 0
+\]
+
+\subsection*{b) Mean and Variance}
+
+For an exponential distribution with parameter $\lambda$, the mean and variance are given by:
+\[
+\mathbb{E}[X] = \frac{1}{\lambda}, \quad \text{Var}(X) = \frac{1}{\lambda^2}
+\]
+Substituting $\lambda = 2$:
+\[
+\mathbb{E}[X] = \frac{1}{2} = 0.5, \quad \text{Var}(X) = \frac{1}{4} = 0.25
+\]
+
+\subsection*{c) PDF with Target Variance $\sigma^2 = 4$}
+
+We solve for the rate $\lambda$ such that:
+\[
+\text{Var}(X) = \frac{1}{\lambda^2} = 4 \Rightarrow \lambda = \frac{1}{\sqrt{4}} = 0.5
+\]
+The corresponding pdf becomes:
+\[
+f(x) = 0.5 e^{-0.5x}, \quad x \geq 0
+\]
+
+\end{document}

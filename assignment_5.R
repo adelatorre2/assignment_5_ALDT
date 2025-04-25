@@ -158,6 +158,64 @@ E_target <- 0.1
 required_n <- ceiling((z_95 * sigma_known / E_target)^2)
 cat("Minimum required sample size for E <= 0.1:", required_n, "\n")
 
+
 # d) Expected value and variance
 cat("Expected value:", x_bar, "\n")
 cat("Known variance:", sigma2_known, "\n")
+
+
+# ---------------------------------------------
+# Part 4: Exponential Distribution Analysis
+# ---------------------------------------------
+
+# Given parameter for the exponential distribution
+lambda_exp <- 2
+
+# a) PDF of the exponential distribution
+pdf_exponential <- function(x, lambda) {
+  ifelse(x >= 0, lambda * exp(-lambda * x), 0)
+}
+
+# Display PDF formula for lambda = 2
+cat("PDF of exponential distribution with lambda = 2:\n")
+cat("f(x) = 2 * exp(-2 * x) for x >= 0\n\n")
+
+# b) Mean and variance for exponential distribution
+mean_exp <- 1 / lambda_exp
+var_exp <- 1 / (lambda_exp^2)
+cat("Mean:", mean_exp, "\n")
+cat("Variance:", var_exp, "\n\n")
+
+# c) Find the lambda that gives a variance of 4
+target_variance <- 4
+lambda_new <- 1 / sqrt(target_variance)
+cat("Lambda for variance = 4:", lambda_new, "\n")
+
+# New PDF with the adjusted lambda
+cat("PDF of exponential distribution with variance = 4:\n")
+cat(paste0("f(x) = ", round(lambda_new, 3), " * exp(-", round(lambda_new, 3), " * x) for x >= 0\n"))
+
+
+# OPTIONAL PDF PLOT
+# Parameters for the plot
+lambda <- 2  # Example lambda value
+x_values <- seq(0, 5, by = 0.01)  # Range of x values
+y_values <- pdf_exponential(x_values, lambda)  # Compute PDF values
+
+# Create a data frame for plotting
+pdf_data <- data.frame(x = x_values, y = y_values)
+
+# Plot the PDF using ggplot2
+library(ggplot2)
+p_pdf <- ggplot(pdf_data, aes(x = x, y = y)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "PDF of Exponential Distribution",
+       x = "x",
+       y = "f(x)") +
+  theme_minimal()
+
+# Save the plot
+ggsave("report/figures/exponential_pdf_plot.png", plot = p_pdf, width = 8, height = 6)
+
+# Display the plot
+print(p_pdf)
